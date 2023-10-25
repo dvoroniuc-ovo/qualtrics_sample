@@ -28,8 +28,9 @@ end
 target 'qualtrics_sample' do
   config = use_native_modules!
 
-  # Autolinking doesn't work with Qualtrics
-  pod "RNQualtricsDigital", :path => "../node_modules/react-native-qualtrics/ios"
+  # Autolinking doesn't work with react native in app review
+  pod 'react-native-in-app-review', :path => '../node_modules/react-native-in-app-review'
+
 
   # Flags change depending on the env values.
   flags = get_default_flags()

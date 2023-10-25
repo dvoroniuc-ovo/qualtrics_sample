@@ -7,7 +7,9 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
 import com.facebook.react.defaults.DefaultReactNativeHost;
+import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.ibits.react_native_in_app_review.AppReviewPackage;
 import java.util.List;
 
 public class MainApplication extends Application implements ReactApplication {
@@ -25,10 +27,13 @@ public class MainApplication extends Application implements ReactApplication {
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
+          packages.add(new MainReactPackage());
+          packages.add(new AppReviewPackage());
+
           return packages;
         }
 
-        @Override
+          @Override
         protected String getJSMainModuleName() {
           return "index";
         }
